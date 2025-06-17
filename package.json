@@ -1,0 +1,37 @@
+{
+  "name": "riset-tech-site",
+  "version": "1.0.0",
+  "description": "Static site built with 11ty and markdown",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build.js",
+    "build:css": "tailwindcss -i ./src/css/tailwind.css -o ./src/css/style.css --minify",
+    "build:css:watch": "tailwindcss -i ./src/css/tailwind.css -o ./src/css/style.css --watch",
+    "build:eleventy": "eleventy",
+    "start": "npm run build:css && eleventy --serve",
+    "dev": "concurrently \"npm run build:css:watch\" \"eleventy --serve --watch\"",
+    "debug": "DEBUG=Eleventy* eleventy"
+  },
+  "keywords": [
+    "11ty",
+    "eleventy",
+    "static-site",
+    "markdown",
+    "tailwindcss"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-bundle": "^1.0.5",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.16",
+    "concurrently": "^8.2.2",
+    "markdown-it": "^14.0.0",
+    "markdown-it-anchor": "^9.0.0",
+    "markdown-it-attrs": "^4.2.0",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6"
+  }
+}

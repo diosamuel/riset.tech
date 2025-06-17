@@ -1,0 +1,44 @@
+---
+layout: base.njk
+---
+
+<article class="post">
+    <header class="post-header">
+        <div class="container">
+            <h1 class="post-title">{{ title }}</h1>
+            {% if date %}
+            <time class="post-date" datetime="{{ date | dateISO }}">{{ date | date }}</time>
+            {% endif %}
+            {% if tags %}
+            <div class="post-tags">
+                {% for tag in tags %}
+                <span class="tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </header>
+
+    <div class="post-content">
+        <div class="container">
+            {{ content | safe }}
+        </div>
+    </div>
+
+    <footer class="post-footer">
+        <div class="container">
+            <div class="post-navigation">
+                {% if prevPost %}
+                <a href="{{ prevPost.url }}" class="prev-post">
+                    ← {{ prevPost.data.title }}
+                </a>
+                {% endif %}
+                {% if nextPost %}
+                <a href="{{ nextPost.url }}" class="next-post">
+                    {{ nextPost.data.title }} →
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </footer>
+</article> 
