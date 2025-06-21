@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if title %}{{ title }} - {% endif %}Riset Tech</title>
+    <title>{% if title %}{{ title }} &gt;&gt; {% endif %}riset.tech</title>
     <meta name="description" content="{{ description or 'Welcome to Riset Tech - Exploring technology and innovation' }}">
     
     <!-- CSS -->
@@ -14,7 +14,9 @@
 </head>
 <body>
 
-
+    <nav class="justify-center items-center">
+        <img src="./assets/banner.png" class="w-full fixed top-0">
+    </nav>
     <main class="min-h-screen">
         {{ content | safe }}
     </main>
